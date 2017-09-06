@@ -25,14 +25,18 @@
 	</body>
 		<script type="text/javascript">
 			var yansezu = ['#FF6EB4', '#ADFF2F', '#FFFF00', '#AEEEEE',"#9400D3","#00B2EE","#C1CDC1","#EEEE00","#FFD700","#EE6A50","#D1EEEE","#CD00CD"];
-			
-			function Neon() {333
-			  dingshi = setInterval(dingshiqi,1000);
+			var kaiguan=true;
+			function Neon() {
+				if(kaiguan){
+				  dingshi = setInterval(dingshiqi,1000);
+				  kaiguan = false;
+				}
 			}
 			
 			function NeonClose() {
 				clearInterval(dingshi);
 				reseata();
+				kaiguan = true;
 			}
 			
 			function dingshiqi() {
