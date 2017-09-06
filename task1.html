@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="task1.css" />
+		<title></title>
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	</head>
+
+	<body>
+		<div class="SuDuKu" id="SuDuKua">
+			<div class="0"></div>
+			<div class="1"></div>
+			<div class="2"></div>
+			<div class="3"></div>
+			<div class="4"></div>
+			<div class="5"></div>
+			<div class="6"></div>
+			<div class="7"></div>
+			<div class="8"></div>
+		</div>
+		<div class="start" onclick="Neon()">开始闪</div>
+		<div class="close" onclick="NeonClose()">结束闪</div>
+	</body>
+		<script type="text/javascript">
+			var yansezu = ['#FF6EB4', '#ADFF2F', '#FFFF00', '#AEEEEE',"#9400D3","#00B2EE","#C1CDC1","#EEEE00","#FFD700","#EE6A50","#D1EEEE","#CD00CD"];
+			
+			function Neon() {333
+			  dingshi = setInterval(dingshiqi,1000);
+			}
+			
+			function NeonClose() {
+				clearInterval(dingshi);
+				reseata();
+			}
+			
+			function dingshiqi() {
+				var weizhisuzu = sudub(3, 9);
+				var yanseweizhi= sudub(3, 11);
+				reseata();
+				stylea(weizhisuzu, yanseweizhi);
+			}
+			
+			function reseata() {
+				var yanse_se = yansezu.length
+			   for (var i = 0; i < yanse_se; i++) {
+					$(".SuDuKu").children("div").eq(i).css("background-color","orange"); 
+				}
+			}
+			
+			
+			function stylea(weizhisuzu,yansesuzu){
+				var wz_length = weizhisuzu.length;
+				if (yansesuzu.length < wz_length) {
+					wz_length = yansesuzu.length;
+				}
+				for (var i = 0; i < wz_length; i++) {
+					 var weizhi = weizhisuzu[i];
+					 var yanse = yansezu[yansesuzu[i]];
+					 console.log(yanse);
+					$(".SuDuKu").children("div").eq(weizhi).css("background-color",yanse);
+				}
+			}
+			
+			function sudub(a,b){
+					var sudu = new Array();
+					for (var i = 0; i < a;) {
+						var sudua = Math.floor(Math.random()*b);
+						var chongfu = false;
+						for (var j = 0; j < sudu.length; j++) {
+							if (sudu[j] == sudua) {
+								chongfu = true;
+								break;
+							}
+						}
+						if (!chongfu) {
+							sudu[sudu.length] = sudua;
+							i++;
+						}
+					}
+					return sudu;
+			}
+		</script>
+</html>

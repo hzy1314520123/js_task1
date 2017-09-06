@@ -1,0 +1,87 @@
+
+.SuDuKu{
+	overflow: hidden;
+}
+
+.SuDuKu div{
+	width: 29.5vw;
+	height: 29.5vw;
+	background-color: orange;
+	float: left;
+	margin: 1%;
+	border-radius: 10%;
+	
+}
+.start,.close{
+	margin-top: 30px;
+	padding: 15px 0;
+	text-align: center;
+	font-size: 20px;
+	color: orange;
+	border: 1px solid orange;
+	border-radius: 5px;
+}
+.start:hover{
+	color: white;
+	background-color: orange;
+}
+.close:hover{
+	color: white;
+	background-color: orange;
+}
+
+<script type="text/javascript">
+			var 颜色数组 = ['red', 'green', 'yellow', 'blue'...];
+			function 开始() {
+				启动定时器();
+			}
+			
+			function 结束() {
+				关闭定时器();
+				还原样式();
+			}
+			
+			function 定时器() {
+				var 位置数组 = 随机数字(3, 9);
+				var 颜色位置数组= 随机数字(3, 12);
+				还原样式();  
+				设置样式(位置数组, 颜色位置数组);
+			}
+		
+			
+			function 还原样式() {
+				略
+			}
+			
+			function 设置样式(位置数组, 颜色位置数组) {
+				var length = 位置数组.length;
+				if (颜色位置数组.length < length) {
+					length = 颜色位置数组.length;
+				}
+				for (var i = 0; i < length; i++) {
+					var 位置 = 位置数组[i];
+					var 颜色 = 颜色数组[颜色位置数组[i]];
+					var div = 根据位置获取到元素;
+					设置div的颜色;
+				}
+			}
+			
+			function 随机数字(个数, 最大数) {
+				var 数字数组 = new Array();
+				for (var i = 0; i < 个数;) {
+					var 数字 = Math.floor(最大数);
+					var 重复 = false;
+					for (var j = 0; j < 数字数组.length; j++) {
+						if (数字数组[j] == 数字) {
+							重复 = true;
+							break;
+						}
+					}
+					if (!重复) {
+						数字数组[数字数组.length] = 数字;
+						i++;
+					}
+				}
+				return 数字数组;
+			}
+		</script>
